@@ -1,0 +1,147 @@
+<html>
+   <head>
+      <script>
+         function show(val)
+         {
+             document.getElementById("in").value+=val;
+         }
+
+          function del()
+         {
+            document.getElementById("result").value = "";
+            str = document.getElementById("in").value;
+            str = str.substring(0, str.length - 1);
+            document.getElementById("in").value= str;
+         }
+
+         function clr()
+         {
+             document.getElementById("result").value = "";
+             document.getElementById("in").value = "";
+         }
+      </script>
+      <!-- for styling -->
+      <style>
+            h1{
+     text-align: center;
+     margin-top: 0.67em;
+     margin-bottom: 0.67em;
+   }
+   .container{
+     margin: auto;
+     width: 18.7%;
+     padding: 10px;
+     border: 1px solid #f2f2f2;
+     -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+        -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+             box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+     background-color: #fff;
+     height: 570px;
+     background-color: #F8F8F8;
+   }
+   .header{
+     font-family:verdana;
+     font-size:20px;
+     background-color: #606060;
+     padding: 10px;
+     color: #fff;
+     text-align: center;
+   }
+   .result{
+     font-size: 35px;
+     padding: 15px 5px;
+     font-weight: 700;
+     text-align: right;
+     width: 100%;
+     border: 1px solid #D3D3D3;
+     background-color: #F5F5F5;
+     margin: 8px 0;
+     box-sizing: border-box;
+   }
+   .first-row,
+   .second-row,
+   .third-row,
+   .fourth-row,
+   .conflict
+   {
+     display: inline-block;
+     width: 100%;
+   }
+   .small{
+     width: 60px;
+  height: 60px;
+  float: left;
+  padding: 0;
+  margin: 5px;
+  box-sizing: border-box;
+  background: #ecedef;
+  border: none;
+  font-size: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #5E5858;
+  cursor: pointer;
+   }
+   .green{
+     background-color: #81C784;
+   }
+   .red{
+     background-color: #F50258
+   }
+   .grey{
+     background-color: #F2F2F2;
+   }
+   .white-text{
+     color: #fff;
+   }
+   .top-margin{
+     margin-top: 4px;
+   }
+
+      </style>
+   </head>
+   <form onsubmit="/" method="POST">
+    <div class="container">
+      <div class="header">Calculator</div>
+      <input type="text" class="result" id="in" name="in" value={{input|safe}}>
+        <input type="text" class="result" id="result" value={{result|safe}}>
+      <div class="first-row">
+        <input type="button" name="" value="(" class="small" onclick="show('(')">
+        <input type="button" name="" value=")" class="small" onclick="show(')')">
+        <input type="button" name="" value="." class="small" onclick="show('.')">
+        <input type="button" name="" value="C" class="red small white-text top-margin" onclick="clr()">
+
+      </div>
+      <div class="second-row">
+        <input type="button" name="" value="+" class="small" onclick="show('+')">
+        <input type="button" name="" value="-" class="small" onclick="show('-')">
+        <input type="button" name="" value="*" class="small" onclick="show('*')">
+        <input type="button" name="" value="/" class="small" onclick="show('/')">
+      </div>
+      <div class="second-row">
+        <input type="button" name="" value="1" class="small" onclick="show('1')">
+        <input type="button" name="" value="2" class="small" onclick="show('2')">
+        <input type="button" name="" value="3" class="small" onclick="show('3')">
+        <input type="button" name="" value="4" class="small" onclick="show('4')">
+
+      </div>
+      <div class="third-row">
+        <input type="button" name="" value="5" class="small" onclick="show('5')">
+        <input type="button" name="" value="6" class="small" onclick="show('6')">
+        <input type="button" name="" value="7" class="small" onclick="show('7')">
+        <input type="button" name="" value="8" class="small" onclick="show('8')">
+
+      </div>
+      <div class="fourth-row">
+
+        <input type="button" name="" value="9" class="small" onclick="show('9')">
+        <input type="button" name="" value="0" class=" small" onclick="show('0')">
+          <input type="button" name="" value="Del" class="red small white-text top-margin" onclick="del()">
+        <input type="submit" name="" value="=" class=" green white-text small top-margin">
+
+      </div>
+
+    </div>
+     </form>
+</html>
